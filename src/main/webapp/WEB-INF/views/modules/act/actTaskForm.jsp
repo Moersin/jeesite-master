@@ -21,7 +21,7 @@
 	<ul class="nav nav-tabs">
 		<li><a href="${ctx}/act/task/todo/">待办任务</a></li>
 		<li><a href="${ctx}/act/task/historic/">已办任务</a></li>
-		<li class="active"><a href="${ctx}/act/task/form?taskId=${act.taskId}&taskName=${act.taskName}&taskDefKey=${act.taskDefKey}&procInsId=${act.procInsId}&procDefId${act.procDefId}">${empty act.procInsId?"新建任务":"任务处理"}</a></li>
+		<%-- <li class="active"><a href="${ctx}/act/task/form?taskId=${act.taskId}&taskName=${act.taskName}&taskDefKey=${act.taskDefKey}&procInsId=${act.procInsId}&procDefId${act.procDefId}">${empty act.procInsId?"新建任务":"任务处理"}</a></li> --%>
 	</ul>
 	<form:form method="post" class="form-horizontal">
 		<sys:message content="${message}"/><%--
