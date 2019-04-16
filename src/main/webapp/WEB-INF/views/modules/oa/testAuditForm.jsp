@@ -66,7 +66,7 @@
 					<td colspan="5">
 						<input id="startTime" name="startTime" type="text" readonly="readonly" maxlength="20" class="Wdate required"
 					onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:false});"/>
-					--<input id="endTime" name="endTime" type="text" readonly="readonly" maxlength="20" class="Wdate required"
+					至<input id="endTime" name="endTime" type="text" readonly="readonly" maxlength="20" class="Wdate required"
 					onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:false});"/>
 					</td>
 				</tr>
