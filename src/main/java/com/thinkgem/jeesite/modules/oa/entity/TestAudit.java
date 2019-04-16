@@ -3,6 +3,8 @@
  */
 package com.thinkgem.jeesite.modules.oa.entity;
 
+import java.util.Date;
+
 import com.thinkgem.jeesite.common.persistence.ActEntity;
 import com.thinkgem.jeesite.modules.sys.entity.Office;
 import com.thinkgem.jeesite.modules.sys.entity.User;
@@ -21,17 +23,16 @@ public class TestAudit extends ActEntity<TestAudit> {
 	private String 	age;	//	性别
 	private String 	edu;	//	学历
 	private String 	content;	//	调整原因
-	private String 	olda;	//	现行标准 薪酬档级
-	private String 	oldb;	//	现行标准 月工资额
-	private String 	oldc;	//	现行标准 年薪总额
-	private String 	newa;	//	调整后标准 薪酬档级
-	private String 	newb;	//	调整后标准 月工资额
-	private String 	newc;	//	调整后标准 年薪总额
-	private String 	addNum;	//	月增资
 	private String 	exeDate;	//	执行时间
 	private String 	hrText;		//	人力资源部门意见
 	private String 	leadText;	//	分管领导意见
 	private String 	mainLeadText;//	集团主要领导意见
+
+	private Date startTime;	// 请假开始日期
+	private Date endTime;	// 请假结束日期
+	private Date realityStartTime;	// 实际开始时间
+	private Date realityEndTime;	// 实际结束时间
+	private String leaveType;	// 假种
 
 	public TestAudit() {
 		super();
@@ -73,53 +74,7 @@ public class TestAudit extends ActEntity<TestAudit> {
 		this.content = content;
 	}
 
-	public String getOlda() {
-		return olda;
-	}
-
-	public void setOlda(String olda) {
-		this.olda = olda;
-	}
-
-	public String getOldb() {
-		return oldb;
-	}
-
-	public void setOldb(String oldb) {
-		this.oldb = oldb;
-	}
-
-	public String getOldc() {
-		return oldc;
-	}
-
-	public void setOldc(String oldc) {
-		this.oldc = oldc;
-	}
-
-	public String getNewa() {
-		return newa;
-	}
-
-	public void setNewa(String newa) {
-		this.newa = newa;
-	}
-
-	public String getNewb() {
-		return newb;
-	}
-
-	public void setNewb(String newb) {
-		this.newb = newb;
-	}
-
-	public String getNewc() {
-		return newc;
-	}
-
-	public void setNewc(String newc) {
-		this.newc = newc;
-	}
+	
 
 	public String getExeDate() {
 		return exeDate;
@@ -169,14 +124,46 @@ public class TestAudit extends ActEntity<TestAudit> {
 		this.office = office;
 	}
 
-	public String getAddNum() {
-		return addNum;
+	public Date getStartTime() {
+		return startTime;
 	}
 
-	public void setAddNum(String addNum) {
-		this.addNum = addNum;
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
 	}
-	
+
+	public Date getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
+	}
+
+	public Date getRealityStartTime() {
+		return realityStartTime;
+	}
+
+	public void setRealityStartTime(Date realityStartTime) {
+		this.realityStartTime = realityStartTime;
+	}
+
+	public Date getRealityEndTime() {
+		return realityEndTime;
+	}
+
+	public void setRealityEndTime(Date realityEndTime) {
+		this.realityEndTime = realityEndTime;
+	}
+
+	public String getLeaveType() {
+		return leaveType;
+	}
+
+	public void setLeaveType(String leaveType) {
+		this.leaveType = leaveType;
+	}
+
 }
 
 

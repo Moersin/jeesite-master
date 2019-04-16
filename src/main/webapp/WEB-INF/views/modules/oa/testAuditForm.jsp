@@ -54,6 +54,23 @@
 					</td>
 				</tr>
 				<tr>
+					<td class="tit">请休假类型</td>
+					<td colspan="5">
+						<form:select path="leaveType" >
+					<form:options items="${fns:getDictList('oa_leave_type')}" itemLabel="label" itemValue="value" htmlEscape="false" />
+				</form:select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tit">请休假时间</td>
+					<td colspan="5">
+						<input id="startTime" name="startTime" type="text" readonly="readonly" maxlength="20" class="Wdate required"
+					onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:false});"/>
+					--<input id="endTime" name="endTime" type="text" readonly="readonly" maxlength="20" class="Wdate required"
+					onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:false});"/>
+					</td>
+				</tr>
+				<tr>
 					<td class="tit">请休假原因</td>
 					<td colspan="5">
 						<form:textarea path="content" class="required" rows="5" maxlength="200" cssStyle="width:500px"/>
