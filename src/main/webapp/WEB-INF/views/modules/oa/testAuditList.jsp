@@ -30,7 +30,7 @@
 	</form:form>
 	<sys:message content="${message}"/>
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
-		<thead><tr><th>姓名</th><th>部门</th><th>岗位职级</th><th>调整原因</th><th>申请时间</th><shiro:hasPermission name="oa:testAudit:edit"><th>操作</th></shiro:hasPermission></tr></thead>
+		<thead><tr><th>姓名</th><th>部门</th><th>请休假原因</th><th>申请时间</th><shiro:hasPermission name="oa:testAudit:edit"><th>操作</th></shiro:hasPermission></tr></thead>
 		<tbody>
 		<c:forEach items="${page.list}" var="testAudit">
 			<tr>

@@ -2,7 +2,7 @@
 <%@ include file="/WEB-INF/views/include/taglib.jsp"%>
 <html>
 <head>
-	<title>审批管理</title>
+	<title>请休假</title>
 	<meta name="decorator" content="default"/>
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -51,58 +51,12 @@
 						<sys:treeselect id="office" name="office.id" value="${testAudit.office.id}" labelName="office.name" labelValue="${testAudit.office.name}" 
 							title="用户" url="/sys/office/treeData?type=2" cssClass="required recipient" cssStyle="width:150px" 
 							allowClear="true" notAllowSelectParent="true" smallBtn="false"/>
-					</td><%-- <td class="tit">岗位职级</td><td>
-						<form:input path="post" htmlEscape="false" maxlength="50"/>
-					</td> --%>
+					</td>
 				</tr>
 				<tr>
-					<td class="tit">调整原因</td>
+					<td class="tit">请休假原因</td>
 					<td colspan="5">
 						<form:textarea path="content" class="required" rows="5" maxlength="200" cssStyle="width:500px"/>
-					</td>
-				</tr>
-				<%-- <tr>
-					<td class="tit" rowspan="3">调整原因</td>
-					<td class="tit">薪酬档级</td>
-					<td><form:input path="olda" htmlEscape="false" maxlength="50"/></td>
-					<td class="tit" rowspan="3">拟调整标准</td>
-					<td class="tit">薪酬档级</td>
-					<td><form:input path="newa" htmlEscape="false" maxlength="50"/></td>
-				</tr>
-				<tr>
-					<td class="tit">月工资额</td>
-					<td><form:input path="oldb" htmlEscape="false" maxlength="50"/></td>
-					<td class="tit">月工资额</td>
-					<td><form:input path="newb" htmlEscape="false" maxlength="50"/></td>
-				</tr>
-				<tr>
-					<td class="tit">年薪金额</td>
-					<td><form:input path="oldc" htmlEscape="false" maxlength="50"/></td>
-					<td class="tit">年薪金额</td>
-					<td><form:input path="newc" htmlEscape="false" maxlength="50"/></td>
-				</tr>
-				<tr>
-					<td class="tit">月增资</td>
-					<td colspan="2"><form:input path="addNum" htmlEscape="false" maxlength="50"/></td>
-					<td class="tit">执行时间</td>
-					<td colspan="2"><form:input path="exeDate" htmlEscape="false" maxlength="50"/></td>
-				</tr> --%>
-				<tr>
-					<td class="tit">人力资源部意见</td>
-					<td colspan="5">
-						${testAudit.hrText}
-					</td>
-				</tr>
-				<tr>
-					<td class="tit">分管领导意见</td>
-					<td colspan="5">
-						${testAudit.leadText}
-					</td>
-				</tr>
-				<tr>
-					<td class="tit">集团主要领导意见</td>
-					<td colspan="5">
-						${testAudit.mainLeadText}
 					</td>
 				</tr>
 			</table>
