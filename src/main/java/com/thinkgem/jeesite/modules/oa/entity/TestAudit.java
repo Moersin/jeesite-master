@@ -33,6 +33,7 @@ public class TestAudit extends ActEntity<TestAudit> {
 	private Date realityStartTime;	// 实际开始时间
 	private Date realityEndTime;	// 实际结束时间
 	private String leaveType;	// 假种
+	private String attach;
 
 	public TestAudit() {
 		super();
@@ -162,6 +163,14 @@ public class TestAudit extends ActEntity<TestAudit> {
 
 	public void setLeaveType(String leaveType) {
 		this.leaveType = leaveType;
+	}
+
+	public String getAttach() {
+		return attach;
+	}
+
+	public void setAttach(String attach) {
+		this.attach = attach;
 	}
 
 }

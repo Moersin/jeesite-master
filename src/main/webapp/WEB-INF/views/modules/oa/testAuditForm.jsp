@@ -28,7 +28,7 @@
 <body>
 	<ul class="nav nav-tabs">
 		<li><a href="${ctx}/oa/testAudit/">审批列表</a></li>
-		<li class="active"><a href="${ctx}/oa/testAudit/form?id=${testAudit.id}"><shiro:hasPermission name="oa:testAudit:edit">审批${not empty testAudit.id?'修改':'申请'}流程</shiro:hasPermission><shiro:lacksPermission name="oa:testAudit:edit">查看</shiro:lacksPermission></a></li>
+		<li class="active"><a href="${ctx}/oa/testAudit/form?id=${testAudit.id}"><shiro:hasPermission name="oa:testAudit:edit">请休假${not empty testAudit.id?'修改':'申请'}</shiro:hasPermission><shiro:lacksPermission name="oa:testAudit:edit">查看</shiro:lacksPermission></a></li>
 	</ul>
 	<form:form id="inputForm" modelAttribute="testAudit" action="${ctx}/oa/testAudit/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
@@ -57,8 +57,8 @@
 					<td class="tit">请休假类型</td>
 					<td colspan="5">
 						<form:select path="leaveType" >
-					<form:options items="${fns:getDictList('oa_leave_type')}" itemLabel="label" itemValue="value" htmlEscape="false" />
-				</form:select>
+							<form:options items="${fns:getDictList('oa_leave_type')}" itemLabel="label" itemValue="value" htmlEscape="false" />
+						</form:select>
 					</td>
 				</tr>
 				<tr>
@@ -74,6 +74,13 @@
 					<td class="tit">请休假原因</td>
 					<td colspan="5">
 						<form:textarea path="content" class="required" rows="5" maxlength="200" cssStyle="width:500px"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="tit">附件</td>
+					<td colspan="5">
+					<form:hidden id="testAudit_attach" path="attach" htmlEscape="false" maxlength="2000" />
+					<sys:ckfinder input="testAudit_attach" type="images" uploadPath="/oa/testAudit" selectMultiple="true"/>
 					</td>
 				</tr>
 			</table>

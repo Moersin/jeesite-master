@@ -43,6 +43,25 @@
 					<td class="tit">请休假原因</td>
 					<td colspan="5">${testAudit.content}</td>
 				</tr>
+				<tr>
+					<td class="tit">请休假类型</td>
+					<td colspan="5">
+					${fns:getDictLabel(testAudit.leaveType, 'oa_leave_type', '')}</td>
+				</tr>
+				<tr>
+					<td class="tit">请休假时间</td>
+					<td colspan="5">
+						<ins><fmt:formatDate value="${testAudit.startTime}" pattern="yyyy年MM月dd日 HH:mm"/></ins>
+						至<ins><fmt:formatDate value="${testAudit.endTime}" pattern="yyyy年MM月dd日 HH:mm"/></ins>
+					</td>
+				</tr>
+				<tr>
+					<td class="tit">附件</td>
+					<td colspan="5">
+					<input id="testAudit_attach" name="testAudit.attach" type="hidden" value="${testAudit.attach}"/>
+                       <sys:ckfinder input="testAudit_attach" type="images" uploadPath="/oa/testAudit" maxWidth="120" maxHeight="120" selectMultiple="true" readonly="true"/>
+					</td>
+				</tr>
 			</table>
 		</fieldset>
 		<act:histoicFlow procInsId="${testAudit.act.procInsId}" />

@@ -27,7 +27,8 @@
 		a.update_by AS "updateBy.id", 
 		a.update_date, 
 		a.remarks, 
-		a.del_flag
+		a.del_flag,
+		a.attach
 	</sql>
 	
 	<sql id="testAuditJoins">
@@ -93,7 +94,10 @@
 			del_flag,
 			start_time, 
 			end_time, 
-			leave_type
+			leave_type,
+			reality_start_time,
+			reality_end_time,
+			attach
 		) VALUES (
 			#{id}, 
 			#{user.id}, 
@@ -113,7 +117,8 @@
 			#{endTime}, 
 			#{leaveType}, 
 			#{realityStartTime}, 
-			#{realityEndTime}
+			#{realityEndTime},
+			#{attach}
 		)
 	</insert>
 	
@@ -131,7 +136,8 @@
 			remarks = #{remarks},
 			leave_type = #{leaveType}, 
 			start_time = #{startTime}, 
-			end_time = #{endTime}
+			end_time = #{endTime},
+			attach = #{attach}
 		WHERE id = #{id}
 	</update>
 	
