@@ -79,9 +79,9 @@
 		</fieldset>
 		<div class="form-actions">
 			<shiro:hasPermission name="oa:testAudit:edit">
-				<c:if test="${testAudit.act.taskDefKey eq 'apply_end'}">
+				<%-- <c:if test="${testAudit.act.taskDefKey eq 'apply_end'}">
 					<input id="btnSubmit" class="btn btn-primary" type="submit" value="兑 现" onclick="$('#flag').val('yes')"/>&nbsp;
-				</c:if>
+				</c:if> --%>
 				<c:if test="${testAudit.act.taskDefKey ne 'apply_end'}">
 					<input id="btnSubmit" class="btn btn-primary" type="submit" value="同 意" onclick="$('#flag').val('yes')"/>&nbsp;
 					<input id="btnSubmit" class="btn btn-inverse" type="submit" value="驳 回" onclick="$('#flag').val('no')"/>&nbsp;

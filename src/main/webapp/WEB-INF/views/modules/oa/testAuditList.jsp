@@ -30,16 +30,26 @@
 	</form:form>
 	<sys:message content="${message}"/>
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
-		<thead><tr><th>姓名</th><th>部门</th><th>请休假原因</th><th>申请时间</th><shiro:hasPermission name="oa:testAudit:edit"><th>操作</th></shiro:hasPermission></tr></thead>
+		<thead>
+			<tr>
+			<th>假种</th>
+			<th>申请人</th>
+			<th>申请时间</th>
+			<th>开始时间</th>
+			<th>结束时间</th>
+			<shiro:hasPermission name="oa:testAudit:edit"><th>操作</th></shiro:hasPermission>
+			</tr>
+		</thead>
 		<tbody>
 		<c:forEach items="${page.list}" var="testAudit">
 			<tr>
+				<td>${fns:getDictLabel(testAudit.leaveType, 'oa_leave_type', '')}</td>
 				<td><a href="${ctx}/oa/testAudit/form?id=${testAudit.id}">${testAudit.user.name}</a></td>
-				<td>${testAudit.office.name}</td>
-				<td>${testAudit.content}</td>
-				<td><fmt:formatDate value="${testAudit.createDate}" type="both" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+				<td><fmt:formatDate value="${testAudit.createDate}" type="both"/></td>
+				<td><fmt:formatDate value="${testAudit.startTime}" type="both"/></td>
+				<td><fmt:formatDate value="${testAudit.endTime}" type="both"/></td>
 				<shiro:hasPermission name="oa:testAudit:edit"><td>
-    				<a href="${ctx}/oa/testAudit/form?id=${testAudit.id}">详情</a>
+    				<a href="${ctx}/oa/testAudit/form?id=${testAudit.id}">查看</a>
 					<a href="${ctx}/oa/testAudit/delete?id=${testAudit.id}" onclick="return confirmx('确认要删除该审批吗？', this.href)">删除</a>
 					<a href="${ctx}/oa/testAudit/form?id=${testAudit.id}">销假</a>
 				</td></shiro:hasPermission>

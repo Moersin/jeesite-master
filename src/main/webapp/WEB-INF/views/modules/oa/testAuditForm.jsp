@@ -45,11 +45,11 @@
 				<tr>
 					<td class="tit">姓名</td><td>
 						<sys:treeselect id="user" name="user.id" value="${testAudit.user.id}" labelName="user.name" labelValue="${testAudit.user.name}" 
-							title="用户" url="/sys/office/treeData?type=3" cssClass="required recipient" cssStyle="width:150px" 
+							title="申请人" url="/sys/office/treeData?type=3" cssClass="required recipient" cssStyle="width:150px" 
 							allowClear="true" notAllowSelectParent="true" smallBtn="false"/>
 					</td><td class="tit">部门</td><td>
 						<sys:treeselect id="office" name="office.id" value="${testAudit.office.id}" labelName="office.name" labelValue="${testAudit.office.name}" 
-							title="用户" url="/sys/office/treeData?type=2" cssClass="required recipient" cssStyle="width:150px" 
+							title="部门" url="/sys/office/treeData?type=2" cssClass="required recipient" cssStyle="width:150px" 
 							allowClear="true" notAllowSelectParent="true" smallBtn="false"/>
 					</td>
 				</tr>
@@ -65,9 +65,11 @@
 					<td class="tit">请休假时间</td>
 					<td colspan="5">
 						<input id="startTime" name="startTime" type="text" readonly="readonly" maxlength="20" class="Wdate required"
-					onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',isShowClear:false});"/>
-					至<input id="endTime" name="endTime" type="text" readonly="readonly" maxlength="20" class="Wdate required"
-					onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',isShowClear:false});"/>
+						value="<fmt:formatDate value="${testAudit.startTime}" pattern="yyyy-MM-dd HH:mm"/>"
+						onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',isShowClear:false});"/>
+						至<input id="endTime" name="endTime" type="text" readonly="readonly" maxlength="20" class="Wdate required"
+						value="<fmt:formatDate value="${testAudit.endTime}" pattern="yyyy-MM-dd HH:mm"/>"
+						onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',isShowClear:false});"/>
 					</td>
 				</tr>
 				<tr>
