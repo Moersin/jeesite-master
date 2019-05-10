@@ -75,29 +75,20 @@
 						<form:textarea path="act.comment" class="required" rows="5" maxlength="20" cssStyle="width:500px"/>
 					</td>
 				</tr>
-				<c:if test="${testAudit.act.taskName eq '销假'}">
 				<tr>
 					<td class="tit">实际结束时间</td>
 					<td colspan="5">
-						<input id="endTime" name="endTime" type="text" readonly="readonly" maxlength="20" class="Wdate required"
+					<input id="endTime" name="endTime" type="text" readonly="readonly" maxlength="20" class="Wdate required"
 						value="<fmt:formatDate value="${testAudit.endTime}" pattern="yyyy-MM-dd HH:mm"/>"
 						onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',isShowClear:false});"/>
 					</td>
 				</tr>
-				</c:if>
 			</table>
 		</fieldset>
 		<div class="form-actions">
 			<shiro:hasPermission name="oa:testAudit:edit">
-				<%-- <c:if test="${testAudit.act.taskDefKey eq 'apply_end'}">
-					<input id="btnSubmit" class="btn btn-primary" type="submit" value="兑 现" onclick="$('#flag').val('yes')"/>&nbsp;
-				</c:if> --%>
-				<c:if test="${testAudit.act.taskName ne '销假'}">
-					<input id="btnSubmit" class="btn btn-primary" type="submit" value="同 意" onclick="$('#flag').val('yes')"/>&nbsp;
-					<input id="btnSubmit" class="btn btn-inverse" type="submit" value="驳 回" onclick="$('#flag').val('no')"/>&nbsp;
-				</c:if>
-				<c:if test="${testAudit.act.taskName eq '销假'}">
-					<input id="btnSubmit" class="btn btn-primary" type="submit" value="确认" onclick="$('#flag').val('yes')"/>
+				<c:if test="${testAudit.act.taskDefKey ne 'apply_end'}">
+					<input id="btnSubmit" class="btn btn-primary" type="submit" value="确认销假" onclick="$('#flag').val('yes')"/>&nbsp;
 				</c:if>
 			</shiro:hasPermission>
 			<input id="btnCancel" class="btn" type="button" value="返 回" onclick="history.go(-1)"/>

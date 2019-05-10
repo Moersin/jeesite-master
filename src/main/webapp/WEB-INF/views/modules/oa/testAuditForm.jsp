@@ -26,10 +26,10 @@
 	</script>
 </head>
 <body>
-	<ul class="nav nav-tabs">
+	<%-- <ul class="nav nav-tabs">
 		<li><a href="${ctx}/oa/testAudit/">审批列表</a></li>
 		<li class="active"><a href="${ctx}/oa/testAudit/form?id=${testAudit.id}"><shiro:hasPermission name="oa:testAudit:edit">请休假${not empty testAudit.id?'修改':'申请'}</shiro:hasPermission><shiro:lacksPermission name="oa:testAudit:edit">查看</shiro:lacksPermission></a></li>
-	</ul>
+	</ul> --%>
 	<form:form id="inputForm" modelAttribute="testAudit" action="${ctx}/oa/testAudit/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
 		<form:hidden path="act.taskId"/>
@@ -40,7 +40,7 @@
 		<form:hidden id="flag" path="act.flag"/>
 		<sys:message content="${message}"/>
 		<fieldset>
-			<legend>审批申请</legend>
+			<legend>请假申请</legend>
 			<table class="table-form">
 				<tr>
 					<td class="tit">姓名</td><td>
