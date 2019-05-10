@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.thinkgem.jeesite.modules.oa.dao.LeaveDao;
+import com.thinkgem.jeesite.modules.oa.dao.TestAudit1Dao;
 import com.thinkgem.jeesite.modules.oa.entity.Leave;
 
 /**
@@ -24,7 +24,7 @@ public class LeaveModifyProcessor implements TaskListener {
 	private static final long serialVersionUID = 1L;
 
 	@Autowired
-	private LeaveDao leaveDao;
+	private TestAudit1Dao leaveDao;
 	@Autowired
 	private RuntimeService runtimeService;
 

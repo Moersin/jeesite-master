@@ -50,6 +50,9 @@
 				<td><fmt:formatDate value="${testAudit.endTime}" type="both"/></td>
 				<shiro:hasPermission name="oa:testAudit:edit"><td>
     				<a href="${ctx}/oa/testAudit/form?id=${testAudit.id}">查看</a>
+    				<%-- <c:if test="">
+    				
+    				</c:if> --%>
 					<a href="${ctx}/oa/testAudit/delete?id=${testAudit.id}" onclick="return confirmx('确认要删除该审批吗？', this.href)">删除</a>
 					<a href="${ctx}/oa/testAudit/form?id=${testAudit.id}">销假</a>
 				</td></shiro:hasPermission>
