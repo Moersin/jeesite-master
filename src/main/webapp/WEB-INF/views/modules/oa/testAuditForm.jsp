@@ -44,12 +44,12 @@
 			<table class="table-form">
 				<tr>
 					<td class="tit">姓名</td><td>
-						<sys:treeselect id="user" name="user.id" value="${testAudit.user.id}" labelName="user.name" labelValue="${testAudit.user.name}" 
-							title="申请人" url="/sys/office/treeData?type=3" cssClass="required recipient" cssStyle="width:150px" 
+						<sys:treeselect id="user" name="user.id" value="${fns:getUser().id}" labelName="user.name" labelValue="${fns:getUser().name}" 
+							title="申请人" url="/sys/office/treeData?type=3" cssClass="required recipient" cssStyle="width:150px"  disabled="disabled"
 							allowClear="true" notAllowSelectParent="true" smallBtn="false"/>
 					</td><td class="tit">部门</td><td>
-						<sys:treeselect id="office" name="office.id" value="${testAudit.office.id}" labelName="office.name" labelValue="${testAudit.office.name}" 
-							title="部门" url="/sys/office/treeData?type=2" cssClass="required recipient" cssStyle="width:150px" 
+						<sys:treeselect id="office" name="office.id" value="${fns:getUser().office.id}" labelName="office.name" labelValue="${fns:getUser().office.name}" 
+							title="部门" url="/sys/office/treeData?type=2" cssClass="required recipient" cssStyle="width:150px"  disabled="disabled"
 							allowClear="true" notAllowSelectParent="true" smallBtn="false"/>
 					</td>
 				</tr>

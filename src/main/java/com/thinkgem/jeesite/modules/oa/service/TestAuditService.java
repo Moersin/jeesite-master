@@ -98,6 +98,8 @@ public class TestAuditService extends CrudService<TestAuditDao, TestAudit> {
 			testAudit.setLeadText(testAudit.getAct().getComment());
 			dao.updateLeadText(testAudit);
 		}
+		
+		//销假判断
 		else if ("audit4".equals(taskDefKey)){
 			testAudit.setMainLeadText(testAudit.getAct().getComment());
 			dao.updateMainLeadText(testAudit);

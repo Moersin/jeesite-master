@@ -64,6 +64,9 @@
 					<if test="dbName == 'mssql'">'%'+#{user.id}+'%'</if>
 					<if test="dbName == 'mysql'">CONCAT('%', #{user.id}, '%')</if>
 		</if>
+		<if test="leaveType != null and leaveType != ''">
+			AND a.leave_type = #{leaveType}
+		</if>
 		ORDER BY a.update_date DESC
 	</select>
 	
